@@ -1,4 +1,4 @@
 package com.company.model;
 
-public class Randomizer {
+public class View {
 }
