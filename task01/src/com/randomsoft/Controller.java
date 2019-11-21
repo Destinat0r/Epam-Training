@@ -18,7 +18,7 @@ public class Controller {
         view.printMessage(model.getMessage());
     }
 
-    public String makeMessageFromUserInputUsingKeywords() {
+    private String makeMessageFromUserInputUsingKeywords() {
 
         String[] keywords = model.getKeywords();
         Scanner scanner = new Scanner(System.in);
@@ -32,7 +32,7 @@ public class Controller {
         return stringBuilder.toString().trim();
     }
 
-    public String promptUserUntilValidInput(Scanner scanner, String keyword) {
+    private String promptUserUntilValidInput(Scanner scanner, String keyword) {
         String userInput = scanner.nextLine();
 
         while (!userInput.equals(keyword)) {
