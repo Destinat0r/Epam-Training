@@ -4,58 +4,50 @@ import java.util.List;
 
 public class View {
 
-    private String startMessage = "Welcome to \"Guess the number\" Game!\nTry to guess "
-                                          + "the secret number";
-    private String biggerMessage = "Bigger then ";
-    private String smallerMessage = "Smaller then ";
+    private String startMessage = "Welcome to \"Secret Integer\"!\nTry to guess "
+                                          + "the integer number from %d to %d!\n";
+    private String biggerMessage = "Bigger then %d!\n";
+    private String smallerMessage = "Smaller then %d!\n";
     private String guessedMessage = "Congratulations! You've guessed!";
-    private String promptMessage = "Please, enter an int";
+    private String promptMessage = "Please, enter an int in range [%d, %d].\n";
     private String invalidInputMessage = "Invalid input!";
     private String wrongRangeMessage = "Think again!";
-    private String statsDivider = "============== STATS ==============";
+    private String gameResultsMessage = "============= STATS ============= \nYou have guessed using %d tries!\n";
+    private String guessInfo = "Guess #%d ------- %d\n";
 
     public void printStartMessage(int min, int max) {
-        print(startMessage + " from " + min + " to " + max);
-    }
-
-    private void print(String message) {
-        System.out.println(message);
-    }
-
-    private void printf(String message, int ...params) {
-        System.out.printf(message + "\n", params);
+        System.out.printf(startMessage, min, max);
     }
 
     public void printPromptInRange(int min, int max) {
-        print(promptMessage + " in range [" + min + ", " + max + "]");
+        System.out.printf(promptMessage, min, max);
     }
 
     public void printInvalidInput() {
-        print(invalidInputMessage);
+        System.out.println(invalidInputMessage);
     }
 
     public void printBiggerThan(int guess) {
-        print(biggerMessage + guess);
+        System.out.printf(biggerMessage, guess);
     }
 
     public void printSmallerThan(int guess) {
-        print(smallerMessage + guess);
+        System.out.printf(smallerMessage, guess);
     }
 
     public void printGuessed() {
-        print(guessedMessage);
+        System.out.println(guessedMessage);
     }
 
     public void printStats(List<Integer> stats) {
-        print(statsDivider);
-        print("You have guessed, using " + stats.size() + " tries!\n");
+        System.out.printf(gameResultsMessage, stats.size());
 
         for (int i = 0; i < stats.size(); i++) {
-            print("Guess #" + (i + 1) + " ------- " + stats.get(i));
+            System.out.printf(guessInfo, i + 1, stats.get(i));
         }
     }
 
     public void printWrongRangeInput() {
-        print(wrongRangeMessage);
+        System.out.println(wrongRangeMessage);
     }
 }
