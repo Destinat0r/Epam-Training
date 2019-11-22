@@ -8,7 +8,7 @@ public class View {
                                           + "the integer number from %d to %d!\n";
     private String biggerMessage = "Bigger then %d!\n";
     private String smallerMessage = "Smaller then %d!\n";
-    private String guessedMessage = "Congratulations! You've guessed!";
+    private String congratsMessage = "Congratulations! You've guessed!";
     private String promptMessage = "Please, enter an integer in range [%d, %d].\n";
     private String invalidInputMessage = "Invalid input!";
     private String wrongRangeMessage = "Think again!";
@@ -35,8 +35,8 @@ public class View {
         System.out.printf(smallerMessage, guess);
     }
 
-    public void printGuessed() {
-        System.out.println(guessedMessage);
+    public void printCongrats() {
+        System.out.println(congratsMessage);
     }
 
     public void printStats(List<Integer> stats) {
