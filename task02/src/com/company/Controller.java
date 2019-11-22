@@ -19,11 +19,29 @@ public class Controller {
         view.printStartMessage(model.getMin(), model.getMax());
 
         while (!model.isWon()) {
-            checkInput(promptInput(scanner), secretNumber);
+            checkAndRespond(promptInput(scanner), secretNumber);
         }
 
+        view.printCongrats();
         view.printStats(model.getStats());
         scanner.close();
+    }
+
+    public void checkAndRespond(int input, int secretNumber) {
+        if (input == secretNumber) {
+            updateForGuessed(input);
+
+        } else if(!model.isInRange(input)) {
+            view.printWrongRangeInput();
+
+        } else if (input < secretNumber) {
+            updateForSmaller(input);
+            view.printBiggerThan(input);
+
+        } else if (input > secretNumber) {
+            updateForBigger(input);
+            view.printSmallerThan(input);
+        }
     }
 
     private int promptInput(Scanner scanner) {
@@ -36,27 +54,22 @@ public class Controller {
             view.printPromptRange(min, max);
             scanner.next();
         }
+
         return scanner.nextInt();
     }
 
-    public void checkInput(int input, int secretNumber) {
-        if (input == secretNumber) {
-            model.addToStats(input);
-            model.setWon();
-            view.printGuessed();
+    private void updateForGuessed(int input) {
+        model.addToStats(input);
+        model.setWon();
+    }
 
-        } else if(!model.isInNewRange(input)) {
-            view.printWrongRangeInput();
+    private void updateForSmaller(int input) {
+        model.addToStats(input);
+        model.setMin(input);
+    }
 
-        } else if (input < secretNumber) {
-            model.addToStats(input);
-            model.setMin(input);
-            view.printBiggerThan(input);
-
-        } else if (input > secretNumber) {
-            model.addToStats(input);
-            model.setMax(input);
-            view.printSmallerThan(input);
-        }
+    private void updateForBigger(int input) {
+        model.addToStats(input);
+        model.setMax(input);
     }
 }
