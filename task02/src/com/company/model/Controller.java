@@ -23,6 +23,7 @@ public class Controller {
         }
 
         view.printStats(model.getStats());
+        scanner.close();
     }
 
     private int promptInput(Scanner scanner) {
