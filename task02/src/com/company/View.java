@@ -9,10 +9,10 @@ public class View {
     private String biggerMessage = "Bigger then %d!\n";
     private String smallerMessage = "Smaller then %d!\n";
     private String guessedMessage = "Congratulations! You've guessed!";
-    private String promptMessage = "Please, enter an int in range [%d, %d].\n";
+    private String promptMessage = "Please, enter an integer in range [%d, %d].\n";
     private String invalidInputMessage = "Invalid input!";
     private String wrongRangeMessage = "Think again!";
-    private String gameResultsMessage = "============= STATS ============= \nYou have guessed using %d tries!\n";
+    private String gameResultsMessage = "============= STATS ============ \nYou have guessed using %d tries!\n";
     private String guessInfo = "Guess #%d ------- %d\n";
 
     public void printStartMessage(int min, int max) {
