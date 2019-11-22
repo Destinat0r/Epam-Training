@@ -19,7 +19,7 @@ public class Model {
         this.stats = new ArrayList<>();
     }
 
-    public boolean isInNewRange(int input) {
+    public boolean isInRange(int input) {
         return input >= min && input <= max;
     }
 
