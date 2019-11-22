@@ -28,11 +28,11 @@ public class Controller {
     private int promptInput(Scanner scanner) {
         int min = model.getMin();
         int max = model.getMax();
-        view.printPromptInRange(min, max);
+        view.printPromptRange(min, max);
 
         while (!scanner.hasNextInt()) {
             view.printInvalidInput();
-            view.printPromptInRange(min, max);
+            view.printPromptRange(min, max);
             scanner.next();
         }
         return scanner.nextInt();

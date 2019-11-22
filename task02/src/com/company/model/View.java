@@ -19,7 +19,7 @@ public class View {
         System.out.printf(startMessage, min, max);
     }
 
-    public void printPromptInRange(int min, int max) {
+    public void printPromptRange(int min, int max) {
         System.out.printf(promptMessage, min, max);
     }
 
