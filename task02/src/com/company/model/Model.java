@@ -8,7 +8,6 @@ public class Model {
     private int max;
     private int min;
     private int secretNumber;
-    private int currentInput;
     private boolean won = false;
 
     private List<Integer> stats;
@@ -20,7 +19,7 @@ public class Model {
         this.stats = new ArrayList<>();
     }
 
-    public boolean isInNewRange(int input, int min, int max) {
+    public boolean isInNewRange(int input) {
         return input >= min && input <= max;
     }
 
@@ -30,10 +29,6 @@ public class Model {
 
     public void addToStats(int guess) {
         stats.add(guess);
-    }
-
-    public void setCurrentInput(int currentInput) {
-        this.currentInput = currentInput;
     }
 
     public int getSecretNumber() {
