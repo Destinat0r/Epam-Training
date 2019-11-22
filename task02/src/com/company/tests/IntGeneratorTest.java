@@ -1,6 +1,6 @@
 package com.company.tests;
 
-import com.company.model.IntGenerator;
+import com.company.IntGenerator;
 import org.junit.Assert;
 import org.junit.Test;
 
