@@ -12,17 +12,22 @@ public class View {
     private String promptMessage = "Please, enter an int";
     private String invalidInputMessage = "Invalid input!";
     private String wrongRangeMessage = "Think again!";
+    private String statsDivider = "============== STATS ==============";
 
     public void printStartMessage(int min, int max) {
         print(startMessage + " from " + min + " to " + max);
     }
 
-    public void printPromptInRange(int min, int max) {
-        print(promptMessage + " in range [" + min + ", " + max + "]");
-    }
-
     private void print(String message) {
         System.out.println(message);
+    }
+
+    private void printf(String message, int ...params) {
+        System.out.printf(message + "\n", params);
+    }
+
+    public void printPromptInRange(int min, int max) {
+        print(promptMessage + " in range [" + min + ", " + max + "]");
     }
 
     public void printInvalidInput() {
@@ -42,7 +47,7 @@ public class View {
     }
 
     public void printStats(List<Integer> stats) {
-        print("============== STATS ==============");
+        print(statsDivider);
         print("You have guessed, using " + stats.size() + " tries!\n");
 
         for (int i = 0; i < stats.size(); i++) {
