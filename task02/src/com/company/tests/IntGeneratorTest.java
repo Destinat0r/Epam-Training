@@ -4,18 +4,30 @@ import com.company.model.IntGenerator;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
 public class IntGeneratorTest {
 
-    @Test public void generatesDifferentNumbers() {
-        Set<Integer> results = new HashSet<>();
-        int i = 0;
-        for (; i < 100; i++) {
-            results.add(IntGenerator.rand(0, 100));
+    @Test
+    public void shouldCorrectlyGenerateIntFrom_0to100() {
+        int min = 0;
+        int max = 100;
+        for (int i = min; i <= max; i++) {
+            int randInt = IntGenerator.rand(0, 100);
+            Assert.assertTrue("Int should be in range ", randInt >= min && randInt <= max);
         }
-        Assert.assertTrue("Should unique nums", results.size() > 1);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrow_IllegalArgumentException_whenNegativeMin() {
+        IntGenerator.rand(-1, 100);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrow_IllegalArgumentException_whenNegativeMax() {
+        IntGenerator.rand(-1000, -100);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrow_IllegalArgumentException_whenMinBiggerThanMax() {
+        IntGenerator.rand(40,20);
     }
 }
