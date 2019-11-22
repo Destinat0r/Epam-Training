@@ -21,7 +21,7 @@ public class Model {
     }
 
     public boolean isInNewRange(int input, int min, int max) {
-        return input > min && input < max;
+        return input >= min && input <= max;
     }
 
     public List<Integer> getStats() {
