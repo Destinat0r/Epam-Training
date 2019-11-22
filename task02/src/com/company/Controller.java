@@ -39,11 +39,11 @@ public class Controller {
         return scanner.nextInt();
     }
 
-    private void checkInput(int input, int secretNumber) {
+    public void checkInput(int input, int secretNumber) {
         if (input == secretNumber) {
             model.addToStats(input);
-            view.printGuessed();
             model.setWon();
+            view.printGuessed();
 
         } else if(!model.isInNewRange(input)) {
             view.printWrongRangeInput();
