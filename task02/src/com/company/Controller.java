@@ -27,7 +27,7 @@ public class Controller {
         scanner.close();
     }
 
-    public void checkAndRespond(int input, int secretNumber) {
+    private void checkAndRespond(int input, int secretNumber) {
         if (input == secretNumber) {
             updateForGuessed(input);
 
