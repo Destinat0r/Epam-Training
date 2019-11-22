@@ -40,24 +40,22 @@ public class Controller {
 
     private void checkInput(int input, int secretNumber) {
         if (input == secretNumber) {
-            update(input);
+            model.addToStats(input);
             view.printGuessed();
             model.setWon();
-        } else if(!model.isInNewRange(input, model.getMin(), model.getMax())) {
+
+        } else if(!model.isInNewRange(input)) {
             view.printWrongRangeInput();
+
         } else if (input < secretNumber) {
-            update(input);
+            model.addToStats(input);
             model.setMin(input);
             view.printBiggerThan(input);
+
         } else if (input > secretNumber) {
-            update(input);
+            model.addToStats(input);
             model.setMax(input);
             view.printSmallerThan(input);
         }
-    }
-
-    private void update(int input) {
-        model.setCurrentInput(input);
-        model.addToStats(input);
     }
 }
