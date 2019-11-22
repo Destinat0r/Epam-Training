@@ -1,18 +1,27 @@
 package com.company.model;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Model {
 
-    public static IntGenerator generator;
+    private int max;
+    private int min;
+    private int secretNumber;
+    private int currentInput;
+    private boolean won = false;
+
     private List<Integer> stats;
 
-    public Model() {
-        this.generator = new IntGenerator(0, 100);
+    public Model(int min, int max) {
+        this.min = min;
+        this.max = max;
+        secretNumber = IntGenerator.rand(min, max);
         this.stats = new ArrayList<>();
+    }
+
+    public boolean isInNewRange(int input, int min, int max) {
+        return input > min && input < max;
     }
 
     public List<Integer> getStats() {
@@ -20,6 +29,38 @@ public class Model {
     }
 
     public void addToStats(int guess) {
-        this.stats.add(guess);
+        stats.add(guess);
+    }
+
+    public void setCurrentInput(int currentInput) {
+        this.currentInput = currentInput;
+    }
+
+    public int getSecretNumber() {
+        return secretNumber;
+    }
+
+    public boolean isWon() {
+        return won;
+    }
+
+    public void setWon() {
+        this.won = true;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public int getMin() {
+        return min;
     }
 }
