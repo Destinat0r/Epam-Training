@@ -23,12 +23,12 @@ public class Model {
         return input >= min && input <= max;
     }
 
-    public List<Integer> getStats() {
-        return stats;
-    }
-
     public void addToStats(int guess) {
         stats.add(guess);
+    }
+
+    public List<Integer> getStats() {
+        return stats;
     }
 
     public int getSecretNumber() {
