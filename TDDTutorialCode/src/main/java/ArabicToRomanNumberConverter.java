@@ -7,11 +7,7 @@ public class ArabicToRomanNumberConverter {
             return getDefault();
         }
 
-        if (arabicNumber >= 50) {
-            builder.append("L");
-            arabicNumber -= 50;
-        }
-
+        arabicNumber = appendFiftyIfNeeded(arabicNumber, builder);
         arabicNumber = appendDozens(arabicNumber, builder);
         arabicNumber = appendNineIfNeeded(arabicNumber, builder);
         arabicNumber = appendFourIfNeeded(arabicNumber, builder);
@@ -20,6 +16,14 @@ public class ArabicToRomanNumberConverter {
         getRepeatingRomanNumber(arabicNumber, builder);
 
         return builder.toString();
+    }
+
+    private int appendFiftyIfNeeded(int arabicNumber, StringBuilder builder) {
+        if (arabicNumber >= 50) {
+            builder.append("L");
+            arabicNumber -= 50;
+        }
+        return arabicNumber;
     }
 
     private int appendNineIfNeeded(int arabicNumber, StringBuilder builder) {
