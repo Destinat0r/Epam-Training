@@ -4,6 +4,10 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber == 1) {
             return "I";
         }
+        return getDefault();
+    }
+
+    private String getDefault() {
         return "";
     }
 }

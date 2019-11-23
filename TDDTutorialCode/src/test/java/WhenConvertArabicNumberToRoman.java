@@ -21,4 +21,12 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("I", romanNumber);
     }
 
+    @Test
+    public void convert_2_To_II() {
+        ArabicToRomanNumberConverter converter = new ArabicToRomanNumberConverter();
+        String romanNumber = converter.convert(2);
+
+        assertEquals("II", romanNumber);
+    }
+
 }
