@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class ArabicToRomanNumberConverter {
 
-    private static StringBuilder builder;
+    private StringBuilder builder;
 
     public String convert(int arabicNumber) {
         if (arabicNumber == 0) {
