@@ -3,25 +3,27 @@ import java.util.Map;
 
 public class ArabicToRomanNumberConverter {
 
+    private static StringBuilder builder;
+
     public String convert(int arabicNumber) {
         if (arabicNumber == 0) {
             return getDefault();
         }
 
-        StringBuilder builder = new StringBuilder();
+        builder = new StringBuilder();
 
         Map<Integer, String> numberToSymbol = generateArabicToRomanMap();
 
-        processArabicNumber(arabicNumber, numberToSymbol, builder);
+        processArabicNumber(arabicNumber, numberToSymbol);
 
         return builder.toString();
     }
 
     private void processArabicNumber(int arabicNumber,
-            Map<Integer, String> numberToSymbol, StringBuilder builder) {
+            Map<Integer, String> numberToSymbol) {
 
         for (int arabic : numberToSymbol.keySet()) {
-            arabicNumber = appendNeededSymbols(arabic, numberToSymbol.get(arabic), arabicNumber, builder);
+            arabicNumber = appendNeededSymbols(arabic, numberToSymbol.get(arabic), arabicNumber);
         }
     }
 
@@ -41,7 +43,7 @@ public class ArabicToRomanNumberConverter {
         return arabicToRoman;
     }
 
-    private int appendNeededSymbols(int number, String symbol, int arabicNumber, StringBuilder builder) {
+    private int appendNeededSymbols(int number, String symbol, int arabicNumber) {
         while (arabicNumber >= number) {
             builder.append(symbol);
             arabicNumber -= number;
