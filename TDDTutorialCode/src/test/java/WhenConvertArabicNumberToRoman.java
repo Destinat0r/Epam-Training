@@ -51,5 +51,10 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("X", converter.convert(10));
     }
 
+    @Test
+    public void convert_20_To_XX() {
+        assertEquals("X", converter.convert(10));
+    }
+
 }
 
