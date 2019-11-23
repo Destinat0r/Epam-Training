@@ -44,19 +44,11 @@ public class ArabicToRomanNumberConverter {
     }
 
     private int appendFiveIfNeeded(int arabicNumber, StringBuilder builder) {
-        if (arabicNumber >= 5) {
-            builder.append("V");
-            arabicNumber -= 5;
-        }
-        return arabicNumber;
+        return appendSymbolsForNumber(5, "V", arabicNumber, builder);
     }
 
     private int appendDozens(int arabicNumber, StringBuilder builder) {
-        while (arabicNumber  >= 10) {
-            builder.append("X");
-            arabicNumber -= 10;
-        }
-        return arabicNumber;
+        return appendSymbolsForNumber(10, "X", arabicNumber, builder);
     }
 
     private void getRepeatingRomanNumber(int arabicNumber, StringBuilder builder) {
