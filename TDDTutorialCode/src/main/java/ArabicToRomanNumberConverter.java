@@ -12,11 +12,17 @@ public class ArabicToRomanNumberConverter {
 
         Map<Integer, String> numberToSymbol = generateArabicToRomanMap();
 
+        processNumberForAllNeededSymbols(arabicNumber, builder, numberToSymbol);
+
+        return builder.toString();
+    }
+
+    private void processNumberForAllNeededSymbols(int arabicNumber, StringBuilder builder,
+            Map<Integer, String> numberToSymbol) {
+
         for (int arabic : numberToSymbol.keySet()) {
             arabicNumber = appendSymbolsForNumber(arabic, numberToSymbol.get(arabic), arabicNumber, builder);
         }
-
-        return builder.toString();
     }
 
     private Map<Integer, String> generateArabicToRomanMap() {
