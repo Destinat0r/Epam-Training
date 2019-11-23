@@ -3,6 +3,11 @@ public class ArabicToRomanNumberConverter {
     public String convert(int arabicNumber) {
         StringBuilder builder = new StringBuilder();
 
+        if (arabicNumber % 5 == 0) {
+            builder.append("V");
+            arabicNumber -= 5;
+        }
+
         getRepeatingRomanNumber(arabicNumber, builder);
 
         return builder.toString();
