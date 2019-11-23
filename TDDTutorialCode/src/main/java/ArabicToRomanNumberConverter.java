@@ -3,7 +3,7 @@ public class ArabicToRomanNumberConverter {
     public String convert(int arabicNumber) {
         StringBuilder builder = new StringBuilder();
 
-        if (arabicNumber % 5 == 0) {
+        if (arabicNumber >= 5) {
             builder.append("V");
             arabicNumber -= 5;
         }

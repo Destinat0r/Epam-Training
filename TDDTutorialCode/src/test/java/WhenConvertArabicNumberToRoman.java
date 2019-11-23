@@ -30,4 +30,11 @@ public class WhenConvertArabicNumberToRoman {
     public void convert_5_To_V() {
         assertEquals("V", converter.convert(5));
     }
+
+    @Test
+    public void convert_6_To_VI() {
+        assertEquals("VI", converter.convert(6));
+    }
+
 }
+
