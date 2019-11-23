@@ -21,7 +21,7 @@ public class ArabicToRomanNumberConverter {
             Map<Integer, String> numberToSymbol, StringBuilder builder) {
 
         for (int arabic : numberToSymbol.keySet()) {
-            arabicNumber = appendSymbolsForNumber(arabic, numberToSymbol.get(arabic), arabicNumber, builder);
+            arabicNumber = appendNeededSymbols(arabic, numberToSymbol.get(arabic), arabicNumber, builder);
         }
     }
 
@@ -41,7 +41,7 @@ public class ArabicToRomanNumberConverter {
         return arabicToRoman;
     }
 
-    private int appendSymbolsForNumber(int number, String symbol, int arabicNumber, StringBuilder builder) {
+    private int appendNeededSymbols(int number, String symbol, int arabicNumber, StringBuilder builder) {
         while (arabicNumber >= number) {
             builder.append(symbol);
             arabicNumber -= number;
