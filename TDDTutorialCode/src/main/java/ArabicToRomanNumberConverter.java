@@ -22,6 +22,7 @@ public class ArabicToRomanNumberConverter {
     private Map<Integer, String> generateArabicToRomanMap() {
         Map<Integer, String> arabicToRoman = new LinkedHashMap<>();
 
+        arabicToRoman.put(1000, "M");
         arabicToRoman.put(500, "D");
         arabicToRoman.put(100, "C");
         arabicToRoman.put(50, "L");
