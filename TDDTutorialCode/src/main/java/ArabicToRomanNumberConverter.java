@@ -14,7 +14,7 @@ public class ArabicToRomanNumberConverter {
         arabicNumber = appendFiveIfNeeded(arabicNumber, builder);
         arabicNumber = appendFourIfNeeded(arabicNumber, builder);
 
-        getRepeatingRomanNumber(arabicNumber, builder);
+        appendOnes(arabicNumber, builder);
 
         return builder.toString();
     }
@@ -51,7 +51,7 @@ public class ArabicToRomanNumberConverter {
         return appendSymbolsForNumber(10, "X", arabicNumber, builder);
     }
 
-    private int getRepeatingRomanNumber(int arabicNumber, StringBuilder builder) {
+    private int appendOnes(int arabicNumber, StringBuilder builder) {
         return appendSymbolsForNumber(1, "I", arabicNumber, builder);
     }
 
