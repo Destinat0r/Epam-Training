@@ -18,7 +18,12 @@ public class WhenConvertArabicNumberToRoman {
 
     @Test
     public void convert_2_To_II() {
-        assertEquals("II", converter.convert(02));
+        assertEquals("II", converter.convert(2));
+    }
+
+    @Test
+    public void convert_3_To_III() {
+        assertEquals("III", converter.convert(3));
     }
 
 }
