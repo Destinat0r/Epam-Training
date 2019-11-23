@@ -40,7 +40,7 @@ public class ArabicToRomanNumberConverter {
         return arabicNumber;
     }
 
-    private String getDefault() {
+        private String getDefault() {
         return "";
     }
 }
