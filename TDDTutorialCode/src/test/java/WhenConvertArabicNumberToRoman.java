@@ -90,5 +90,11 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("LXXVII", converter.convert(77));
     }
 
+    @Test
+    public void convert_100_To_C() {
+        assertEquals("C", converter.convert(100));
+    }
+
+
 }
 
