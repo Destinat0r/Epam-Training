@@ -46,5 +46,10 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("VIII", converter.convert(8));
     }
 
+    @Test
+    public void convert_10_To_X() {
+        assertEquals("X", converter.convert(10));
+    }
+
 }
 
