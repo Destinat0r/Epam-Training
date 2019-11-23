@@ -1,15 +1,17 @@
 public class ArabicToRomanNumberConverter {
 
     public String convert(int arabicNumber) {
-        StringBuilder output = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
 
-        if (arabicNumber > 0 && arabicNumber <= 3) {
-            while (arabicNumber-- > 0) {
-                output.append("I");
-            }
+        getRepeatingRomanNumber(arabicNumber, builder);
+
+        return builder.toString();
+    }
+
+    private void getRepeatingRomanNumber(int arabicNumber, StringBuilder builder) {
+        while (arabicNumber-- >= 1) {
+            builder.append("I");
         }
-
-        return output.toString();
     }
 
     private String getDefault() {
