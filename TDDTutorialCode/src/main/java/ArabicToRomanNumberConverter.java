@@ -1,10 +1,15 @@
 public class ArabicToRomanNumberConverter {
 
     public String convert(int arabicNumber) {
-        if (arabicNumber == 1) {
-            return "I";
+        StringBuilder output = new StringBuilder();
+
+        if (arabicNumber > 0 && arabicNumber <= 3) {
+            while (arabicNumber-- > 0) {
+                output.append("I");
+            }
         }
-        return getDefault();
+
+        return output.toString();
     }
 
     private String getDefault() {
