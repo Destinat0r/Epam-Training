@@ -70,5 +70,16 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("XIV", converter.convert(14));
     }
 
+    @Test
+    public void convert_39_To_XXXIX() {
+        assertEquals("XXXIX", converter.convert(39));
+    }
+
+    @Test
+    public void convert_44_To_XXXXIV() {
+        assertEquals("XXXXIV", converter.convert(44));
+    }
+
+
 }
 
