@@ -12,6 +12,11 @@ public class ArabicToRomanNumberConverter {
             arabicNumber -= 10;
         }
 
+        if (arabicNumber == 4) {
+            builder.append("IV");
+            arabicNumber -= 4;
+        }
+
         if (arabicNumber >= 5) {
             builder.append("V");
             arabicNumber -= 5;

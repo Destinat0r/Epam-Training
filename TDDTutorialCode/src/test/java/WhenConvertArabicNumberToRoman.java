@@ -1,4 +1,3 @@
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -55,6 +54,12 @@ public class WhenConvertArabicNumberToRoman {
     public void convert_20_To_XX() {
         assertEquals("X", converter.convert(10));
     }
+
+    @Test
+    public void convert_4_To_IV() {
+        assertEquals("IV", converter.convert(4));
+    }
+
 
 }
 
