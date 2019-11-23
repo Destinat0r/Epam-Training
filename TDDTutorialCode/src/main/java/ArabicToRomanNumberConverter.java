@@ -9,16 +9,21 @@ public class ArabicToRomanNumberConverter {
 
         arabicNumber = appendDozens(arabicNumber, builder);
 
-        if (arabicNumber == 4) {
-            builder.append("IV");
-            arabicNumber -= 4;
-        }
+        arabicNumber = appendFourIfNeeded(arabicNumber, builder);
 
         arabicNumber = appendFiveIfNeeded(arabicNumber, builder);
 
         getRepeatingRomanNumber(arabicNumber, builder);
 
         return builder.toString();
+    }
+
+    private int appendFourIfNeeded(int arabicNumber, StringBuilder builder) {
+        if (arabicNumber == 4) {
+            builder.append("IV");
+            arabicNumber -= 4;
+        }
+        return arabicNumber;
     }
 
     private int appendFiveIfNeeded(int arabicNumber, StringBuilder builder) {
