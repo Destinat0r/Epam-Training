@@ -115,5 +115,10 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("M", converter.convert(1000));
     }
 
+    @Test
+    public void convert_60_To_LX() {
+        assertEquals("LX", converter.convert(60));
+    }
+
 }
 
