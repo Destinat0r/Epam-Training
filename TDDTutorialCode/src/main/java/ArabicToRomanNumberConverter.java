@@ -7,10 +7,7 @@ public class ArabicToRomanNumberConverter {
             return getDefault();
         }
 
-        while (arabicNumber % 10 == 0 && arabicNumber > 0) {
-            builder.append("X");
-            arabicNumber -= 10;
-        }
+        arabicNumber = appendDozens(arabicNumber, builder);
 
         if (arabicNumber == 4) {
             builder.append("IV");
@@ -25,6 +22,14 @@ public class ArabicToRomanNumberConverter {
         getRepeatingRomanNumber(arabicNumber, builder);
 
         return builder.toString();
+    }
+
+    private int appendDozens(int arabicNumber, StringBuilder builder) {
+        while (arabicNumber % 10 == 0 && arabicNumber > 0) {
+            builder.append("X");
+            arabicNumber -= 10;
+        }
+        return arabicNumber;
     }
 
     private void getRepeatingRomanNumber(int arabicNumber, StringBuilder builder) {
