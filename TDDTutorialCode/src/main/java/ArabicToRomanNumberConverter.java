@@ -51,11 +51,8 @@ public class ArabicToRomanNumberConverter {
         return appendSymbolsForNumber(10, "X", arabicNumber, builder);
     }
 
-    private void getRepeatingRomanNumber(int arabicNumber, StringBuilder builder) {
-        while (arabicNumber >= 1) {
-            builder.append("I");
-            arabicNumber--;
-        }
+    private int getRepeatingRomanNumber(int arabicNumber, StringBuilder builder) {
+        return appendSymbolsForNumber(1, "I", arabicNumber, builder);
     }
 
     private String getDefault() {
