@@ -26,4 +26,8 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("III", converter.convert(3));
     }
 
+    @Test
+    public void convert_5_To_V() {
+        assertEquals("V", converter.convert(5));
+    }
 }
