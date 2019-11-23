@@ -4,29 +4,21 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class WhenConvertArabicNumberToRoman {
+    private ArabicToRomanNumberConverter converter = new ArabicToRomanNumberConverter();
 
     @Test
     public void convert_0_To_EmptyString() {
-        ArabicToRomanNumberConverter converter = new ArabicToRomanNumberConverter();
-        String romanNumber = converter.convert(0);
-
-        assertEquals("", romanNumber);
+        assertEquals("", converter.convert(0));
     }
 
     @Test
     public void convert_1_To_I() {
-        ArabicToRomanNumberConverter converter = new ArabicToRomanNumberConverter();
-        String romanNumber = converter.convert(1);
-
-        assertEquals("I", romanNumber);
+        assertEquals("I", converter.convert(1));
     }
 
     @Test
     public void convert_2_To_II() {
-        ArabicToRomanNumberConverter converter = new ArabicToRomanNumberConverter();
-        String romanNumber = converter.convert(2);
-
-        assertEquals("II", romanNumber);
+        assertEquals("II", converter.convert(02));
     }
 
 }
