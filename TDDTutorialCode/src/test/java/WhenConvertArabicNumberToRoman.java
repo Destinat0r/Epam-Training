@@ -60,6 +60,10 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("IV", converter.convert(4));
     }
 
+    @Test
+    public void convert_9_To_IX() {
+        assertEquals("IX", converter.convert(9));
+    }
 
 }
 

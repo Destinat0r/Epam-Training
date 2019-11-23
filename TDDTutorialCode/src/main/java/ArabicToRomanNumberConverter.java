@@ -9,6 +9,11 @@ public class ArabicToRomanNumberConverter {
 
         arabicNumber = appendDozens(arabicNumber, builder);
 
+        if (arabicNumber % 9 == 0 && arabicNumber > 0) {
+            builder.append("IX");
+            arabicNumber -= 9;
+        }
+
         arabicNumber = appendFourIfNeeded(arabicNumber, builder);
 
         arabicNumber = appendFiveIfNeeded(arabicNumber, builder);
