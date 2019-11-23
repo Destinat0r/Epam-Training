@@ -36,11 +36,7 @@ public class ArabicToRomanNumberConverter {
     }
 
     private int appendNineIfNeeded(int arabicNumber, StringBuilder builder) {
-        if (arabicNumber % 9 == 0 && arabicNumber > 0) {
-            builder.append("IX");
-            arabicNumber -= 9;
-        }
-        return arabicNumber;
+        return appendSymbolsForNumber(9, "IX", arabicNumber, builder);
     }
 
     private int appendFourIfNeeded(int arabicNumber, StringBuilder builder) {
