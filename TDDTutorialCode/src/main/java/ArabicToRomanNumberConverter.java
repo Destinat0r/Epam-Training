@@ -14,14 +14,19 @@ public class ArabicToRomanNumberConverter {
             arabicNumber -= 4;
         }
 
-        if (arabicNumber >= 5) {
-            builder.append("V");
-            arabicNumber -= 5;
-        }
+        arabicNumber = appendFiveIfNeeded(arabicNumber, builder);
 
         getRepeatingRomanNumber(arabicNumber, builder);
 
         return builder.toString();
+    }
+
+    private int appendFiveIfNeeded(int arabicNumber, StringBuilder builder) {
+        if (arabicNumber >= 5) {
+            builder.append("V");
+            arabicNumber -= 5;
+        }
+        return arabicNumber;
     }
 
     private int appendDozens(int arabicNumber, StringBuilder builder) {
