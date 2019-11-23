@@ -42,7 +42,7 @@ public class ArabicToRomanNumberConverter {
     }
 
     private int appendDozens(int arabicNumber, StringBuilder builder) {
-        while (arabicNumber % 10 == 0 && arabicNumber > 0) {
+        while (arabicNumber  >= 10) {
             builder.append("X");
             arabicNumber -= 10;
         }
