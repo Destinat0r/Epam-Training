@@ -7,6 +7,7 @@ public class ArabicToRomanNumberConverter {
         if (arabicNumber == 0) {
             return getDefault();
         }
+
         StringBuilder builder = new StringBuilder();
 
         Map<Integer, String> numberToSymbol = generateArabicToRomanMap();
@@ -21,6 +22,7 @@ public class ArabicToRomanNumberConverter {
     private Map<Integer, String> generateArabicToRomanMap() {
         Map<Integer, String> arabicToRoman = new LinkedHashMap<>();
 
+        arabicToRoman.put(500, "D");
         arabicToRoman.put(100, "C");
         arabicToRoman.put(50, "L");
         arabicToRoman.put(10, "X");
@@ -40,7 +42,7 @@ public class ArabicToRomanNumberConverter {
         return arabicNumber;
     }
 
-        private String getDefault() {
+    private String getDefault() {
         return "";
     }
 }
