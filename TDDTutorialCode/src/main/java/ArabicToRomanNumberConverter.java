@@ -1,22 +1,35 @@
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ArabicToRomanNumberConverter {
 
     public String convert(int arabicNumber) {
-        StringBuilder builder = new StringBuilder();
-
         if (arabicNumber == 0) {
             return getDefault();
         }
+        StringBuilder builder = new StringBuilder();
 
-        arabicNumber = appendHundreds(arabicNumber, builder);
-        arabicNumber = appendFiftyIfNeeded(arabicNumber, builder);
-        arabicNumber = appendDozens(arabicNumber, builder);
-        arabicNumber = appendNineIfNeeded(arabicNumber, builder);
-        arabicNumber = appendFiveIfNeeded(arabicNumber, builder);
-        arabicNumber = appendFourIfNeeded(arabicNumber, builder);
+        Map<Integer, String> numberToSymbol = generateArabicToRomanMap();
 
-        appendOnes(arabicNumber, builder);
+        for (int arabic : numberToSymbol.keySet()) {
+            arabicNumber = appendSymbolsForNumber(arabic, numberToSymbol.get(arabic), arabicNumber, builder);
+        }
 
         return builder.toString();
+    }
+
+    private Map<Integer, String> generateArabicToRomanMap() {
+        Map<Integer, String> arabicToRoman = new LinkedHashMap<>();
+
+        arabicToRoman.put(100, "C");
+        arabicToRoman.put(50, "L");
+        arabicToRoman.put(10, "X");
+        arabicToRoman.put(9, "IX");
+        arabicToRoman.put(5, "V");
+        arabicToRoman.put(4, "IV");
+        arabicToRoman.put(1, "I");
+
+        return arabicToRoman;
     }
 
     private int appendHundreds(int arabicNumber, StringBuilder builder) {
