@@ -11,20 +11,10 @@ public class ArabicToRomanNumberConverter {
         }
 
         builder = new StringBuilder();
-
         Map<Integer, String> numberToSymbol = generateArabicToRomanMap();
-
         processArabicNumber(arabicNumber, numberToSymbol);
 
         return builder.toString();
-    }
-
-    private void processArabicNumber(int arabicNumber,
-            Map<Integer, String> numberToSymbol) {
-
-        for (int arabic : numberToSymbol.keySet()) {
-            arabicNumber = appendNeededSymbols(arabic, numberToSymbol.get(arabic), arabicNumber);
-        }
     }
 
     private Map<Integer, String> generateArabicToRomanMap() {
@@ -41,6 +31,14 @@ public class ArabicToRomanNumberConverter {
         arabicToRoman.put(1, "I");
 
         return arabicToRoman;
+    }
+
+    private void processArabicNumber(int arabicNumber,
+            Map<Integer, String> numberToSymbol) {
+
+        for (int arabic : numberToSymbol.keySet()) {
+            arabicNumber = appendNeededSymbols(arabic, numberToSymbol.get(arabic), arabicNumber);
+        }
     }
 
     private int appendNeededSymbols(int number, String symbol, int arabicNumber) {
