@@ -8,19 +8,21 @@ public class ArabicToRomanNumberConverter {
         }
 
         arabicNumber = appendDozens(arabicNumber, builder);
-
-        if (arabicNumber % 9 == 0 && arabicNumber > 0) {
-            builder.append("IX");
-            arabicNumber -= 9;
-        }
-
+        arabicNumber = appendNineIfNeeded(arabicNumber, builder);
         arabicNumber = appendFourIfNeeded(arabicNumber, builder);
-
         arabicNumber = appendFiveIfNeeded(arabicNumber, builder);
 
         getRepeatingRomanNumber(arabicNumber, builder);
 
         return builder.toString();
+    }
+
+    private int appendNineIfNeeded(int arabicNumber, StringBuilder builder) {
+        if (arabicNumber % 9 == 0 && arabicNumber > 0) {
+            builder.append("IX");
+            arabicNumber -= 9;
+        }
+        return arabicNumber;
     }
 
     private int appendFourIfNeeded(int arabicNumber, StringBuilder builder) {
