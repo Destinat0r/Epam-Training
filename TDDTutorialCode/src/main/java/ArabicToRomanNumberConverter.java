@@ -7,6 +7,11 @@ public class ArabicToRomanNumberConverter {
             return getDefault();
         }
 
+        if (arabicNumber >= 100) {
+            builder.append("C");
+            arabicNumber -= 100;
+        }
+
         arabicNumber = appendFiftyIfNeeded(arabicNumber, builder);
         arabicNumber = appendDozens(arabicNumber, builder);
         arabicNumber = appendNineIfNeeded(arabicNumber, builder);
