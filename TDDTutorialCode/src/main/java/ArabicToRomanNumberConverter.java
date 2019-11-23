@@ -20,19 +20,19 @@ public class ArabicToRomanNumberConverter {
     }
 
     private int appendHundreds(int arabicNumber, StringBuilder builder) {
-        while (arabicNumber >= 100) {
-            builder.append("C");
-            arabicNumber -= 100;
+        return appendSymbolsForNumber(100, "C", arabicNumber, builder);
+    }
+
+    private int appendSymbolsForNumber(int number, String symbol, int arabicNumber, StringBuilder builder) {
+        while (arabicNumber >= number) {
+            builder.append(symbol);
+            arabicNumber -= number;
         }
         return arabicNumber;
     }
 
     private int appendFiftyIfNeeded(int arabicNumber, StringBuilder builder) {
-        if (arabicNumber >= 50) {
-            builder.append("L");
-            arabicNumber -= 50;
-        }
-        return arabicNumber;
+        return appendSymbolsForNumber(50, "L", arabicNumber, builder);
     }
 
     private int appendNineIfNeeded(int arabicNumber, StringBuilder builder) {
