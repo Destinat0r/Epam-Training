@@ -80,6 +80,10 @@ public class WhenConvertArabicNumberToRoman {
         assertEquals("XXXXIV", converter.convert(44));
     }
 
+    @Test
+    public void convert_50_To_L() {
+        assertEquals("L", converter.convert(50));
+    }
 
 }
 
