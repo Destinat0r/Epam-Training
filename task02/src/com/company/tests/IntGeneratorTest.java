@@ -1,18 +1,19 @@
 package com.company.tests;
 
 import com.company.IntGenerator;
-import org.junit.Assert;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 public class IntGeneratorTest {
 
     @Test
-    public void shouldCorrectlyGenerateIntFrom_0to100() {
+    public void shouldCorrectlyGenerateIntFrom_0to100_For_100_000_Times() {
         int min = 0;
         int max = 100;
-        for (int i = min; i <= max; i++) {
+        for (int i = min; i <= 100_000; i++) {
             int randInt = IntGenerator.rand(0, 100);
-            Assert.assertTrue("Int should be in range ", randInt >= min && randInt <= max);
+            assertTrue("Int should be in range ", randInt > min && randInt < max);
         }
     }
 
