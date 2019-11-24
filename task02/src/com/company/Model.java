@@ -12,9 +12,9 @@ public class Model {
 
     private List<Integer> stats;
 
-    public Model(int min, int max) {
-        this.min = min;
-        this.max = max;
+    public Model() {
+        this.min = GlobalConstants.MIN;
+        this.max = GlobalConstants.MAX;
         secretNumber = IntGenerator.rand(min, max);
         this.stats = new ArrayList<>();
     }
