@@ -10,7 +10,7 @@ public class IntGenerator {
 
     public static int rand(int min, int max) {
         validateRange(min, max);
-        return (int) (Math.random() * max + min + 1);
+        return (int) Math.ceil(Math.random() * (max - min - 1) + min);
     }
 
     public static void validateRange(int min, int max) {
