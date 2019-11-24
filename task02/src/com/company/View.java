@@ -5,11 +5,11 @@ import java.util.List;
 public class View {
 
     private String startMessage = "Welcome to \"Secret Integer\"!\nTry to guess "
-                                          + "the integer number from %d to %d!\n";
+                                          + "the integer number from %d to %d (exclusive)!\n";
     private String biggerMessage = "Bigger then %d!\n";
     private String smallerMessage = "Smaller then %d!\n";
     private String congratsMessage = "Congratulations! You've guessed!";
-    private String promptMessage = "Please, enter an integer in range [%d, %d].\n";
+    private String promptMessage = "Please, enter an integer in range (%d, %d).\n";
     private String invalidInputMessage = "Invalid input!";
     private String wrongRangeMessage = "Think again!";
     private String gameResultsMessage = "============= STATS ============ \nYou have guessed using %d tries!\n";
