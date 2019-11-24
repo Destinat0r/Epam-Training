@@ -20,7 +20,7 @@ public class Model {
     }
 
     public boolean isInRange(int input) {
-        return input >= min && input <= max;
+        return input > min && input < max;
     }
 
     public void addToStats(int guess) {
