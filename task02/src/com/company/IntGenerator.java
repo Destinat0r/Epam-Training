@@ -5,7 +5,7 @@ public class IntGenerator {
     private final static int RAND_MAX = Integer.MAX_VALUE;
 
     public static int rand() {
-        return (int) (Math.random() * RAND_MAX + 1);
+        return rand(0, RAND_MAX);
     }
 
     public static int rand(int min, int max) {
