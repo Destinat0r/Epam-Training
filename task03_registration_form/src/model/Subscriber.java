@@ -26,5 +26,5 @@ public class Subscriber {
     private Date created;
     private Date modified;
 
-    
+
 }
