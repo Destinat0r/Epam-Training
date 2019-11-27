@@ -25,8 +25,5 @@ public interface FieldMessages {
 
     String[] messages = {lastName, firstName, patronymic, nickname, comment, homePhone, mobileOne, mobileTwo, email,
             skype, index, city, street, building, apartment};
-
-    //    String created;
-//    String modified;
-
+    
 }
