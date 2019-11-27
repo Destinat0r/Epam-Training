@@ -24,7 +24,7 @@ public class SubscriberInputReader {
     private static String promptUserUntilValidInput(Scanner scanner, int messageCounter) {
         String userInput = scanner.nextLine();
 
-        while (!userInput.matches(Regex.patterns[messageCounter])) {
+        while (!userInput.matches(RegexPatterns.patterns[messageCounter])) {
             System.out.println(InputMessages.invalidInput);
             System.out.println(InputMessages.messages[messageCounter]);
             userInput = scanner.nextLine();

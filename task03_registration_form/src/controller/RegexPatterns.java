@@ -1,6 +1,6 @@
 package controller;
 
-public interface Regex {
+public interface RegexPatterns {
 
 
     String name = "^[а-яА-ЯёЁa-zA-ZІіЇїЄє’]+$";
