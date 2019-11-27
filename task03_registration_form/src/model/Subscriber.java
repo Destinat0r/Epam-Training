@@ -1,5 +1,6 @@
 package model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -25,8 +26,8 @@ public class Subscriber {
     private String apartment;
     private String fullAddress;
 
-    private Date created;
-    private Date modified;
+    private LocalDateTime created;
+    private LocalDateTime modified;
 
     private ArrayList<String> allSubscriberInfo;
 
@@ -41,4 +42,52 @@ public class Subscriber {
     public void setAllSubscriberInfo(ArrayList<String> allSubscriberInfo) {
         this.allSubscriberInfo = allSubscriberInfo;
     }
+
+    public void init() {
+        int counter = 0;
+        counter = setPersonalInfo(counter);
+        counter = setAdditionalInfo(counter);
+        counter = setContacts(counter);
+        setAddress(counter);
+        setDates();
+    }
+
+
+    private int setPersonalInfo(int counter) {
+        lastName = allSubscriberInfo.get(counter++);
+        firstName = allSubscriberInfo.get(counter++);
+        patronymic = allSubscriberInfo.get(counter++);
+        formattedName = lastName + " " + firstName.substring(0, 1) + ".";
+        return counter;
+    }
+
+    private int setAdditionalInfo(int counter) {
+        nickname = allSubscriberInfo.get(counter++);
+        comment = allSubscriberInfo.get(counter++);
+        return counter;
+    }
+
+    private int setContacts(int counter) {
+        phone = allSubscriberInfo.get(counter++);
+        mobileOne = allSubscriberInfo.get(counter++);
+        mobileTwo = allSubscriberInfo.get(counter++);
+        skype = allSubscriberInfo.get(counter++);
+        return  counter;
+    }
+
+    private int setAddress(int counter) {
+        index = allSubscriberInfo.get(counter++);
+        city = allSubscriberInfo.get(counter++);
+        street = allSubscriberInfo.get(counter++);
+        building = allSubscriberInfo.get(counter++);
+        apartment = allSubscriberInfo.get(counter++);
+        fullAddress = index + ", " + city + ", " + street + ", apt. " + apartment;
+        return counter;
+    }
+
+    private void setDates() {
+        created = LocalDateTime.now();
+        modified = LocalDateTime.now();
+    }
+
 }
