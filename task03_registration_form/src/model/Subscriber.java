@@ -16,6 +16,7 @@ public class Subscriber {
     private String phone;
     private String mobileOne;
     private String mobileTwo;
+    private String email;
     private String skype;
 
     private String index;
@@ -70,6 +71,7 @@ public class Subscriber {
         phone = allSubscriberInfo.get(counter++);
         mobileOne = allSubscriberInfo.get(counter++);
         mobileTwo = allSubscriberInfo.get(counter++);
+        email = allSubscriberInfo.get(counter++);
         skype = allSubscriberInfo.get(counter++);
         return  counter;
     }
