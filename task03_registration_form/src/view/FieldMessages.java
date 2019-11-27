@@ -5,7 +5,7 @@ public interface FieldMessages {
     String patronymic = "Please, enter your patronymic name if any (1-50 characters), else press 'Enter'.";
     String lastName = "Please, enter your last name (1-50 characters).";
 
-    String nickname = "Please, enter your nickname (1-50 characters).";
+    String nickname = "Please, enter your nickname (1-20 characters).";
     String comment = "If you like, enter a comment (1-50 characters), or press 'Enter'.";
 
     String homePhone = "Please, enter your city phone number you could be contacted with (use pattern +38044...), "
