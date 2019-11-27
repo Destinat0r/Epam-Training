@@ -13,5 +13,7 @@ public class Controller {
         this.view = view;
     }
 
-    
+    public void processUser() {
+        model.getSubscriber().setAllSubscriberInfo(UserInputReader.promptSubscriberInfo());
+    }
 }
