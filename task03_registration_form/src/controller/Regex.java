@@ -3,10 +3,10 @@ package controller;
 public interface Regex {
 
 
-    String name = "^[а-яА-ЯёЁa-zA-Z]+$";
+    String name = "^[а-яА-ЯёЁa-zA-ZІіЇїЄє’]+$";
     String lastName = name;
     String firstName = name;
-    String patronymic = "^([а-яА-ЯёЁa-zA-Z]+)?$";
+    String patronymic = "^([а-яА-ЯёЁa-zA-ZІіЇїЄє’]+)?$";
     String nickname = "^[a-zA-Z][a-zA-Z0-9]*$";
     String comment = "^[а-яА-ЯёЁa-zA-Z0-9\\s]{0,50}$";
     String homePhone = "^(\\+38044\\d{7})?$";
@@ -17,8 +17,8 @@ public interface Regex {
 
     String skype = "^([a-zA-Z][a-zA-Z0-9]{5,31})?$";
     String index = "\\d{5}";
-    String city = "[a-zA-Zа-яА-ЯёЁ]{3,}";
-    String street = "^[а-яА-ЯёЁa-zA-Z\\s]+$";
+    String city = "[a-zA-Zа-яА-ЯёЁІіЇїЄє’]{3,}";
+    String street = "^[а-яА-ЯёЁa-zA-Z\\sІіЇїЄє’]+$";
     String building = "\\d{1,3}[а-яА-ЯёЁa-zA-Z]?";
     String apartment = "\\d{1,3}";
 
