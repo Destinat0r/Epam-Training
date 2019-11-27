@@ -12,6 +12,7 @@ public class Subscriber {
 
     private String nickname;
     private String comment;
+    private String group;
 
     private String phone;
     private String mobileOne;
@@ -70,6 +71,7 @@ public class Subscriber {
     private int setAdditionalInfo(int counter) {
         nickname = allSubscriberInfo.get(counter++);
         comment = allSubscriberInfo.get(counter++);
+        group = allSubscriberInfo.get(counter++);
         return counter;
     }
 
@@ -100,9 +102,9 @@ public class Subscriber {
     @Override public String toString() {
         return "Subscriber{" + "lastName='" + lastName + '\'' + ", firstName='" + firstName + '\'' + ", patronymic='"
                        + patronymic + '\'' + ", formattedName='" + formattedName + '\'' + ", nickname='" + nickname
-                       + '\'' + ", comment='" + comment + '\'' + ", phone='" + phone + '\'' + ", mobileOne='"
-                       + mobileOne + '\'' + ", mobileTwo='" + mobileTwo + '\'' + ", email='" + email + '\''
-                       + ", skype='" + skype + '\'' + ", index='" + index + '\'' + ", city='" + city + '\''
+                       + '\'' + ", comment='" + comment + '\'' + ", group='" + group + '\'' + ", phone='" + phone + '\''
+                       + ", mobileOne='" + mobileOne + '\'' + ", mobileTwo='" + mobileTwo + '\'' + ", email='" + email
+                       + '\'' + ", skype='" + skype + '\'' + ", index='" + index + '\'' + ", city='" + city + '\''
                        + ", street='" + street + '\'' + ", building='" + building + '\'' + ", apartment='" + apartment
                        + '\'' + ", fullAddress='" + fullAddress + '\'' + ", created=" + created + ", modified="
                        + modified + '}';

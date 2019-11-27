@@ -9,6 +9,7 @@ public interface RegexPatterns {
     String patronymic = "^([а-яА-ЯёЁa-zA-ZІіЇїЄє’]+)?$";
     String nickname = "^[a-zA-Z][a-zA-Z0-9]*$";
     String comment = "^[а-яА-ЯёЁa-zA-Z0-9\\s]{0,50}$";
+    String group = "A1|A2|A3";
     String homePhone = "^(\\+38044\\d{7})?$";
     String mobileOne = "\\+380(66|50|95|63|73|93|96|97|68|98)\\d{7}";
     String mobileTwo = "^(\\+380(66|50|95|63|73|93|96|97|68)\\d{7})?$";
@@ -23,7 +24,7 @@ public interface RegexPatterns {
     String apartment = "\\d{1,3}";
 
 
-    String[] patterns = {lastName, firstName, patronymic, nickname, comment, homePhone, mobileOne, mobileTwo, email,
+    String[] patterns = {lastName, firstName, patronymic, nickname, comment, group, homePhone, mobileOne, mobileTwo, email,
                             skype, index, city, street, building, apartment};
 
 }

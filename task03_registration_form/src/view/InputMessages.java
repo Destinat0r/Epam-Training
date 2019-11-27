@@ -7,6 +7,7 @@ public interface InputMessages {
 
     String nickname = "Please, enter your nickname (1-20 characters).";
     String comment = "If you like, enter a comment (1-50 characters), or press 'Enter'.";
+    String group = "Please enter your group name: A1, A2 or A3";
 
     String homePhone = "Please, enter your city phone number you could be contacted with (use pattern +38044...), "
                                + "if none press 'Enter'.";
@@ -27,7 +28,7 @@ public interface InputMessages {
 
     String invalidInput = "INVALID INPUT!";
 
-    String[] messages = {lastName, firstName, patronymic, nickname, comment, homePhone, mobileOne, mobileTwo, email,
+    String[] messages = {lastName, firstName, patronymic, nickname, comment, group, homePhone, mobileOne, mobileTwo, email,
             skype, index, city, street, building, apartment};
 
 }
