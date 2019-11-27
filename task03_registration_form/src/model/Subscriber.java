@@ -2,7 +2,6 @@ package model;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Subscriber {
 
@@ -90,4 +89,14 @@ public class Subscriber {
         modified = LocalDateTime.now();
     }
 
+    @Override
+    public String toString() {
+        return "Subscriber{" + "lastName='" + lastName + '\'' + ", firstName='" + firstName + '\'' + ", patronymic='"
+                       + patronymic + '\'' + ", formattedName='" + formattedName + '\'' + ", nickname='" + nickname
+                       + '\'' + ", comment='" + comment + '\'' + ", phone='" + phone + '\'' + ", mobileOne='"
+                       + mobileOne + '\'' + ", mobileTwo='" + mobileTwo + '\'' + ", skype='" + skype + '\''
+                       + ", index='" + index + '\'' + ", city='" + city + '\'' + ", street='" + street + '\''
+                       + ", building='" + building + '\'' + ", apartment='" + apartment + '\'' + ", fullAddress='"
+                       + fullAddress + '\'' + ", created=" + created + ", modified=" + modified + '}';
+    }
 }
