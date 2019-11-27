@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Subscriber {
@@ -27,9 +28,10 @@ public class Subscriber {
     private Date created;
     private Date modified;
 
-    private String[] allData;
+    private ArrayList<String> allSubscriberInfo;
 
-    public Subscriber(int numberOfFields) {
-        this.allData = new String[numberOfFields];
+    public Subscriber() {
+        this.allSubscriberInfo = new ArrayList<>();
     }
+
 }
