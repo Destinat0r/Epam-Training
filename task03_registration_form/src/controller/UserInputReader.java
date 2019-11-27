@@ -1,16 +1,26 @@
 package controller;
 
+import view.FieldMessages;
+
 import java.util.Scanner;
 
 public class UserInputReader {
 
-    private int fieldsToInput = 13;
 
     public void promptSubscriberInfo() {
         Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < fieldsToInput; i++) {
+        int numberOfFields = FieldMessages.messages.length;
 
+        for (int i = 0; i < numberOfFields; i++) {
+            System.out.println(FieldMessages.messages[i]);
+            String userInput = scanner.nextLine();
+
+            while (!userInput.matches(Regex.patterns[i])) {
+                System.out.println(FieldMessages.invalidInput);
+                System.out.println(FieldMessages.messages[i]);
+                userInput = scanner.nextLine();
+            }
         }
     }
 }
