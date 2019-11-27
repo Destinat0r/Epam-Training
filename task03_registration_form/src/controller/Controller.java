@@ -1,6 +1,7 @@
 package controller;
 
 import model.Model;
+import model.Subscriber;
 import view.View;
 
 public class Controller {
@@ -14,6 +15,11 @@ public class Controller {
     }
 
     public void processUser() {
-        model.getSubscriber().setAllSubscriberInfo(UserInputReader.promptSubscriberInfo());
+        Subscriber subscriber = model.getSubscriber();
+
+        subscriber.setAllSubscriberInfo(UserInputReader.promptSubscriberInfo());
+        subscriber.init();
+
+        System.out.println(subscriber);
     }
 }
