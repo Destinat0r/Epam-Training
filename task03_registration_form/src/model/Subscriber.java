@@ -82,7 +82,7 @@ public class Subscriber {
         street = allSubscriberInfo.get(counter++);
         building = allSubscriberInfo.get(counter++);
         apartment = allSubscriberInfo.get(counter++);
-        fullAddress = index + ", " + city + ", " + street + ", apt. " + apartment;
+        fullAddress = index + ", " + city + ", " + street + ", " + building + ", apt. " + apartment;
         return counter;
     }
 
