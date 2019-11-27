@@ -15,9 +15,9 @@ public interface FieldMessages {
     String email = "Please, enter your email.";
     String skype = "Enter your skype account name, or press 'Enter'.";
 
-    String index = "Please, enter your address.\nPlease, enter index.";
+    String index = "Please, enter your address.\nPlease, enter index (5 digits).";
     String city = "Please, enter city name.";
-    String street = "Please, enter street.";
+    String street = "Please, enter street name.";
     String building = "Please, enter building number.";
     String apartment = "Please, enter apartment number.";
 
