@@ -3,9 +3,10 @@ package model;
 import java.util.Date;
 
 public class Subscriber {
+
+    private String lastName;
     private String firstName;
     private String patronymic;
-    private String lastName;
     private String formattedName;
 
     private String nickname;
@@ -26,5 +27,9 @@ public class Subscriber {
     private Date created;
     private Date modified;
 
+    private String[] allData;
 
+    public Subscriber(int numberOfFields) {
+        this.allData = new String[numberOfFields];
+    }
 }
