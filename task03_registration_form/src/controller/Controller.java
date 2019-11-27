@@ -17,7 +17,7 @@ public class Controller {
     public void processUser() {
         Subscriber subscriber = model.getSubscriber();
 
-        subscriber.setAllSubscriberInfo(UserInputReader.promptSubscriberInfo());
+        subscriber.setAllSubscriberInfo(SubscriberInputReader.promptSubscriberInfo());
         subscriber.init();
 
         System.out.println(subscriber);
