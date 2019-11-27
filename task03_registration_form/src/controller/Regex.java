@@ -7,8 +7,8 @@ public interface Regex {
     String lastName = name;
     String firstName = name;
     String patronymic = "^([а-яА-ЯёЁa-zA-Z]+)?$";
-    String nickname = "^[a-zA-Z][a-zA-Z0-9-_\\.]{1,20}$ ";
-    String comment = "^[а-яА-ЯёЁa-zA-Z0-9]{,50}$";
+    String nickname = "^[a-zA-Z][a-zA-Z0-9]*$";
+    String comment = "^[а-яА-ЯёЁa-zA-Z0-9]{0,50}$";
     String homePhone = "\\+38044\\d{7}";
     String mobileOne = "\\+380(66|50|95|63|73|93|96|97|68)\\d{7}";
     String mobileTwo = "^(\\+380(66|50|95|63|73|93|96|97|68)\\d{7})?$";
