@@ -12,7 +12,7 @@ public class Subscriber {
 
     private String nickname;
     private String comment;
-    private String group;
+    private Enum group;
 
     private String phone;
     private String mobileOne;
@@ -71,7 +71,7 @@ public class Subscriber {
     private int setAdditionalInfo(int counter) {
         nickname = allSubscriberInfo.get(counter++);
         comment = allSubscriberInfo.get(counter++);
-        group = allSubscriberInfo.get(counter++);
+        group = Enum.valueOf(Group.class, allSubscriberInfo.get(counter++));
         return counter;
     }
 
