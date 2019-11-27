@@ -10,10 +10,14 @@ public interface FieldMessages {
 
     String homePhone = "Please, enter your city phone number you could be contacted with (use pattern +38044...), "
                                + "if none press 'Enter'.";
-    String mobileOne = "Please, enter your mobile phone number (use pattern +380... ).";
-    String mobileTwo = "If you like, enter second mobile phone number (use pattern +380... ), else press 'Enter'.";
+    String mobileOne = "Please, enter your mobile phone number (use pattern +380... "
+                               + "only ukrainian numbers are supported at the mean time)";
+
+    String mobileTwo = "If you like, enter second mobile phone number (use pattern +380... "
+                               + "only ukrainian numbers are supported at the mean time), else press 'Enter'.";
+
     String email = "Please, enter your email.";
-    String skype = "Enter your skype account name, or press 'Enter'.";
+    String skype = "Enter your Skype account name, or press 'Enter'.";
 
     String index = "Please, enter your address.\nPlease, enter index (5 digits).";
     String city = "Please, enter city name.";
@@ -25,5 +29,5 @@ public interface FieldMessages {
 
     String[] messages = {lastName, firstName, patronymic, nickname, comment, homePhone, mobileOne, mobileTwo, email,
             skype, index, city, street, building, apartment};
-    
+
 }
