@@ -45,7 +45,7 @@ public class Subscriber {
 
     public void init() {
         if (allSubscriberInfo.size() < getInputFieldsAmount()) {
-            throw new IncompliteFormDataException("Not enough fields obtained from the form");
+            throw new NotEnoughFormDataException("Not enough fields obtained from the form");
         }
         int counter = 0;
         counter = setPersonalInfo(counter);
