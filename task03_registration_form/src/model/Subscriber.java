@@ -34,4 +34,11 @@ public class Subscriber {
         this.allSubscriberInfo = new ArrayList<>();
     }
 
+    public ArrayList<String> getAllSubscriberInfo() {
+        return allSubscriberInfo;
+    }
+
+    public void setAllSubscriberInfo(ArrayList<String> allSubscriberInfo) {
+        this.allSubscriberInfo = allSubscriberInfo;
+    }
 }
