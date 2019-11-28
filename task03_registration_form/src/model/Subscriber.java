@@ -189,7 +189,7 @@ public class Subscriber {
         this.modified = modified;
     }
 
-    private void setDates() {
+    public void setDates() {
         created = LocalDateTime.now();
         modified = LocalDateTime.now();
     }

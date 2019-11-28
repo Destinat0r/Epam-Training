@@ -27,6 +27,8 @@ public class Controller {
         setContacts(subscriber, inputReader);
         setAddress(subscriber, inputReader);
 
+        subscriber.setDates();
+
         model.setSubscriber(subscriber);
         System.out.println(subscriber);
     }
