@@ -6,20 +6,18 @@ import java.util.Scanner;
 
 public class View {
 
-    private ResourceBundle regexBundle;
     private ResourceBundle messageBundle;
 
     public View() {
-        regexBundle = ResourceBundle.getBundle("regex_patterns", new Locale("en"));
         messageBundle = ResourceBundle.getBundle("messages", new Locale("en"));
     }
 
     public void promptForLocale(Scanner scanner) {
-        print("To switch language to Ukrainian enter 'ua', to continue with English press 'Enter'");
+        printMessage("prompt_for_locale");
         String userInput = scanner.nextLine();
 
         while (!userInput.equals("ua") || !userInput.equals("")) {
-            print("Unknown locale. Press 'Enter' to continue with English, or type 'ua' to switch to Ukrainian");
+            printMessage("unknown_locale");
             userInput = scanner.nextLine();
         }
 
@@ -28,7 +26,7 @@ public class View {
         }
     }
 
-    public void print(String message) {
-        System.out.println(message);
+    public void printMessage(String message) {
+        System.out.println(messageBundle.getString(message));
     }
 }

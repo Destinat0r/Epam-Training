@@ -3,9 +3,13 @@ package controller;
 import view.InputMessages;
 
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class SubscriberInputReader {
+
+    private static ResourceBundle regexBundle = ResourceBundle.getBundle("regex_patterns", new Locale("en"));
 
     public static ArrayList<String> promptSubscriberInfo() {
         Scanner scanner = new Scanner(System.in);
@@ -31,6 +35,10 @@ public class SubscriberInputReader {
         }
 
         return userInput;
+    }
+
+    public String takeRegexFromBundle(String regex) {
+        return regexBundle.getString(regex );
     }
 
 }
