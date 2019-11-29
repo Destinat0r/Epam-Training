@@ -1,4 +1,4 @@
-package view;
+package util;
 
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -10,11 +10,11 @@ public enum ResourceManager {
     private final String resourceName = "messages";
 
     private ResourceManager() {
-        resourceBundle = ResourceBundle.getBundle(resourceName, new Locale("en"));
+        resourceBundle = ResourceBundle.getBundle(resourceName, new Locale("en"), new UTF8Control());
     }
 
     public void changeResource(Locale locale) {
-        resourceBundle = ResourceBundle.getBundle(resourceName, locale);
+        resourceBundle = ResourceBundle.getBundle(resourceName, locale, new UTF8Control());
     }
 
     public String getString(String key) {

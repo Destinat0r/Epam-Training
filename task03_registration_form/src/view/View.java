@@ -1,7 +1,8 @@
 package view;
 
+import util.ResourceManager;
+
 import java.util.Locale;
-import java.util.ResourceBundle;
 
 public class View {
 
