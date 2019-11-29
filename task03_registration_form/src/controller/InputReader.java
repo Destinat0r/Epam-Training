@@ -41,7 +41,7 @@ public class InputReader {
         }
 
         if (userInput.equals("ua")) {
-            view.setMessagesBundle(ResourceBundle.getBundle("messages", new Locale("ua", "UA")));
+            view.setLocale(ResourceBundle.getBundle("messages", new Locale("ua", "UA")));
         }
     }
 

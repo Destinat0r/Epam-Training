@@ -28,7 +28,7 @@ public class View {
         return messagesBundle;
     }
 
-    public void setMessagesBundle(ResourceBundle messagesBundle) {
+    public void setLocale(ResourceBundle messagesBundle) {
         this.messagesBundle = messagesBundle;
     }
 }
