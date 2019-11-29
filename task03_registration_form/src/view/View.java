@@ -5,14 +5,14 @@ import java.util.ResourceBundle;
 
 public class View {
 
-    private ResourceBundle messagesBundle;
+    private ResourceManager resourceManager;
 
     public View() {
-        messagesBundle = ResourceBundle.getBundle("messages", new Locale("en"));
+        resourceManager = ResourceManager.INSTANCE;
     }
 
     public void printMessage(String message) {
-        System.out.println(messagesBundle.getString(message));
+        System.out.println(resourceManager.getString(message));
     }
 
     public String concat(String ...strings) {
@@ -24,11 +24,7 @@ public class View {
         return builder.toString();
     }
 
-    public ResourceBundle getMessagesBundle() {
-        return messagesBundle;
-    }
-
-    public void setLocale(ResourceBundle messagesBundle) {
-        this.messagesBundle = messagesBundle;
+    public void setLocale(Locale locale) {
+        resourceManager.changeResource(locale);
     }
 }
