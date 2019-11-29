@@ -35,7 +35,6 @@ public class InputReader {
         view.printMessage("prompt_for_locale");
         String userInput = scanner.nextLine();
 
-        System.out.println(userInput);
         while (!userInput.equals("ua") && !userInput.equals("")) {
             view.printMessage("unknown_locale");
             userInput = scanner.nextLine();
