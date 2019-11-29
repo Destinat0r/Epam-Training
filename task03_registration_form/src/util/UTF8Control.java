@@ -11,8 +11,10 @@ import java.util.ResourceBundle;
 import java.util.ResourceBundle.Control;
 
 public class UTF8Control extends Control {
-    public ResourceBundle newBundle(String baseName, Locale locale, String format, ClassLoader loader, boolean reload)
-            throws IllegalAccessException, InstantiationException, IOException {
+    public ResourceBundle newBundle
+            (String baseName, Locale locale, String format, ClassLoader loader, boolean reload)
+            throws IllegalAccessException, InstantiationException, IOException
+    {
         String bundleName = toBundleName(baseName, locale);
         String resourceName = toResourceName(bundleName, "properties");
         ResourceBundle bundle = null;
@@ -26,7 +28,7 @@ public class UTF8Control extends Control {
                     stream = connection.getInputStream();
                 }
             }
-        } else{
+        } else {
             stream = loader.getResourceAsStream(resourceName);
         }
         if (stream != null) {
