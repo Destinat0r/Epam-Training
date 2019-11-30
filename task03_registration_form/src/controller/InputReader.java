@@ -1,5 +1,6 @@
 package controller;
 
+import util.UTF8Control;
 import view.View;
 
 import java.util.Locale;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 public class InputReader {
 
-    private static ResourceBundle regexBundle = ResourceBundle.getBundle("regex_patterns", new Locale("en"));
+    private static ResourceBundle regexBundle = ResourceBundle.getBundle("regex_patterns", new Locale("en"), new UTF8Control());
     private View view;
     private Scanner scanner;
 
