@@ -40,7 +40,7 @@ public class Controller {
         subscriber.setBuilding(inputReader.promptUntilValidInput("building"));
         subscriber.setApartment(inputReader.promptUntilValidInput("apartment"));
 
-        subscriber.setFullAddress(view.concat(subscriber.getIndex(), ", ", subscriber.getCity(),
+        subscriber.setFullAddress(view.concat(subscriber.getIndex(), ", ", subscriber.getCity(), ", ",
                 subscriber.getStreet(), ", ", subscriber.getBuilding(), ", apt. ", subscriber.getApartment(), "."));
     }
 
