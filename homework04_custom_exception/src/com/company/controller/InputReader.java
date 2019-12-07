@@ -7,11 +7,11 @@ import java.util.Scanner;
 /**
  * Created by student on 26.09.2017.
  */
-public class UtilityController {
+public class InputReader {
     private Scanner scanner;
     private View view;
 
-    public UtilityController(Scanner scanner, View view) {
+    public InputReader(Scanner scanner, View view) {
         this.scanner = scanner;
         this.view = view;
     }
