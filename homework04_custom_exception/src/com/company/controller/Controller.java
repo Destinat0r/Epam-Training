@@ -1,6 +1,7 @@
 package com.company.controller;
 
 import com.company.model.Model;
+import com.company.model.RecordAlreadyExistException;
 import com.company.view.View;
 
 import java.util.Scanner;
@@ -19,8 +20,20 @@ public class Controller {
 
     public void processUser() {
         Scanner sc = new Scanner(System.in);
-        InputNoteNoteBook inputNoteNoteBook =
-                new InputNoteNoteBook(view, sc);
-        inputNoteNoteBook.inputNote();
+        InputNoteNoteBook inputNoteNoteBook = new InputNoteNoteBook(view, sc);
+        promptUntilValidLogin(inputNoteNoteBook);
+    }
+
+    private void promptUntilValidLogin(InputNoteNoteBook inputNoteNoteBook) {
+        String login = null;
+        while (true) {
+            try {
+                login = inputNoteNoteBook.inputNote();
+                model.addNewLogin(login);
+                break;
+            } catch (RecordAlreadyExistException e) {
+                System.out.println("login '" + login + "' alredy exist, please enter another one");
+            }
+        }
     }
 }

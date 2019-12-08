@@ -24,17 +24,18 @@ public class InputNoteNoteBook {
         this.sc = sc;
     }
 
-    public void inputNote() {
+    public String inputNote() {
         InputReader inputReader =
                 new InputReader(sc, view);
         String str = (String.valueOf(View.bundle.getLocale()).equals("ua"))
                 ? REGEX_NAME_UKR : REGEX_NAME_LAT;
 
-        this.firstName =
-                inputReader.inputStringValueWithScanner
-                        (FIRST_NAME, str);
+//        this.firstName =
+//                inputReader.promptUntilValidInput
+//                        (FIRST_NAME, str);
         this.login =
-                inputReader.inputStringValueWithScanner
+                inputReader.promptUntilValidInput
                         (LOGIN_DATA, REGEX_LOGIN);
+        return login;
     }
 }
