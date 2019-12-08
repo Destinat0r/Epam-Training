@@ -16,8 +16,8 @@ public class View {
     public static final ResourceBundle bundle =
             ResourceBundle.getBundle(
                     MESSAGES_BUNDLE_NAME,
-                    new Locale("ua", "UA"));  // Ukrainian
-                    //new Locale("en"));        // English
+//                    new Locale("ua", "UA"));  // Ukrainian
+                    new Locale("en"));        // English
 
     //Utilities methods
     /**
@@ -51,6 +51,11 @@ public class View {
                 bundle.getString(WRONG_INPUT_DATA),
                 bundle.getString(INPUT_STRING_DATA),
                 bundle.getString(message)));
+    }
+
+    public void printWrongLogin(String message, String login) {
+        System.out.printf(bundle.getString(message), login);
+        printMessage("");
     }
 
 

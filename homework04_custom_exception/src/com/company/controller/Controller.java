@@ -2,6 +2,7 @@ package com.company.controller;
 
 import com.company.model.Model;
 import com.company.model.RecordAlreadyExistException;
+import com.company.view.TextConstant;
 import com.company.view.View;
 
 import java.util.Scanner;
@@ -32,7 +33,7 @@ public class Controller {
                 model.addNewLogin(login);
                 break;
             } catch (RecordAlreadyExistException e) {
-                System.out.println("login '" + login + "' alredy exist, please enter another one");
+                view.printWrongLogin(TextConstant.LOGIN_EXISTS, login);
             }
         }
     }

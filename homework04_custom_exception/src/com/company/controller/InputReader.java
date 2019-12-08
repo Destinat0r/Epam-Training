@@ -16,7 +16,7 @@ public class InputReader {
         this.view = view;
     }
 
-    String inputStringValueWithScanner(String message, String regex) {
+    String promptUntilValidInput(String message, String regex) {
         String res;
         view.printStringInput(message);
         while( !(scanner.hasNext() &&
