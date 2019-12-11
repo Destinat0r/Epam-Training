@@ -9,14 +9,9 @@ import static com.company.controller.RegexContainer.REGEX_LOGIN;
 import static com.company.view.TextConstant.*;
 import static com.company.view.TextConstant.LOGIN_DATA;
 
-/**
- * Created by student on 26.09.2017.
- */
 public class InputNoteNoteBook {
     private View view;
     private Scanner sc;
-
-    private String firstName;
     private String login;
 
     public InputNoteNoteBook(View view, Scanner sc) {
@@ -25,17 +20,8 @@ public class InputNoteNoteBook {
     }
 
     public String inputNote() {
-        InputReader inputReader =
-                new InputReader(sc, view);
-        String str = (String.valueOf(View.bundle.getLocale()).equals("ua"))
-                ? REGEX_NAME_UKR : REGEX_NAME_LAT;
-
-//        this.firstName =
-//                inputReader.promptUntilValidInput
-//                        (FIRST_NAME, str);
-        this.login =
-                inputReader.promptUntilValidInput
-                        (LOGIN_DATA, REGEX_LOGIN);
+        InputReader inputReader = new InputReader(sc, view);
+        this.login = inputReader.promptUntilValidInput(LOGIN_DATA, REGEX_LOGIN);
         return login;
     }
 }

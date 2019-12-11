@@ -7,9 +7,6 @@ import com.company.view.View;
 
 import java.util.Scanner;
 
-/**
- * Created by student on 26.09.2017.
- */
 public class Controller {
     private Model model;
     private View view;
