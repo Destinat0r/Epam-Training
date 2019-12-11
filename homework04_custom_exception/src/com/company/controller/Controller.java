@@ -1,7 +1,7 @@
 package com.company.controller;
 
 import com.company.model.Model;
-import com.company.model.RecordAlreadyExistException;
+import com.company.model.RecordAlreadyExistsException;
 import com.company.view.TextConstant;
 import com.company.view.View;
 
@@ -29,7 +29,7 @@ public class Controller {
                 login = inputNoteNoteBook.inputNote();
                 model.addNewLogin(login);
                 break;
-            } catch (RecordAlreadyExistException e) {
+            } catch (RecordAlreadyExistsException e) {
                 view.printWrongLogin(TextConstant.LOGIN_EXISTS, login);
             }
         }

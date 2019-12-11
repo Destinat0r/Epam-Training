@@ -13,9 +13,9 @@ public class Model {
         add("tonia312");
     }};
 
-    public void addNewLogin(String login) throws RecordAlreadyExistException {
+    public void addNewLogin(String login) throws RecordAlreadyExistsException {
         if (logins.contains(login)) {
-            throw new RecordAlreadyExistException();
+            throw new RecordAlreadyExistsException();
         }
         logins.add(login);
     }
