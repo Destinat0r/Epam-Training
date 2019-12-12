@@ -1,7 +1,10 @@
 package opt.companic.springcourse;
 
+import java.util.List;
+
 public class MusicPlayer {
     private Music music;
+    private List<Music> musicList;
     private int volume;
     private String name;
 
@@ -15,7 +18,7 @@ public class MusicPlayer {
     }
 
     public void playMusic() {
-        System.out.printf("Playing %s on volume %d\n", music.getSong(), volume);
+        musicList.stream().forEach(music -> System.out.println(music.getSong()));
     }
 
     public void setMusic(Music music) {
@@ -40,5 +43,13 @@ public class MusicPlayer {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Music> getMusicList() {
+        return musicList;
+    }
+
+    public void setMusicList(List<Music> musicList) {
+        this.musicList = musicList;
     }
 }
