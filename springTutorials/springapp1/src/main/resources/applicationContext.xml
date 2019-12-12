@@ -26,7 +26,7 @@
         </constructor-arg>
     </bean>
 
-    <bean id="musicPlayer" class="opt.companic.springcourse.MusicPlayer">
+    <bean id="musicPlayer" class="opt.companic.springcourse.MusicPlayer" scope="prototype">
         <property name="musicList" ref="musicList" />
         <property name="volume" value="${musicPlayer.volume}" />
         <property name="name" value="${musicPlayer.name}" />
