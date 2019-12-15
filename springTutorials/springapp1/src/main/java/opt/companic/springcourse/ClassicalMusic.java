@@ -6,13 +6,11 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
-@Scope("singleton")
 public class ClassicalMusic implements Music {
 
     private String[] music = {"Bethoven - 6th Symphony", "Vivaldi - Seassons", "Mozart - Requiem"};
 
-    private ClassicalMusic() {}
+    public ClassicalMusic() {}
 
     public static ClassicalMusic getClassicalMusic() {
         return new ClassicalMusic();
