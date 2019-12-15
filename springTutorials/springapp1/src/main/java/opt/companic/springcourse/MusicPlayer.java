@@ -1,7 +1,10 @@
 package opt.companic.springcourse;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class MusicPlayer {
     private Music music;
     private List<Music> musicList;
@@ -17,8 +20,8 @@ public class MusicPlayer {
         this.music = music;
     }
 
-    public void playMusic() {
-        musicList.stream().forEach(music -> System.out.println(music.getSong()));
+    public String playMusic() {
+        return music.getSong();
     }
 
     public void setMusic(Music music) {
