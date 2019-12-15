@@ -23,9 +23,9 @@ public class MusicPlayer {
 //        this.music = music;
 //    }
 
-    public void playMusic() {
-        System.out.println("Playing " + classicalMusic.getSong());
-        System.out.println("Playing " + electronicMusic.getSong());
+    public String playMusic() {
+//        System.out.println("Playing " + classicalMusic.getSong());
+        return "Playing " + electronicMusic.getSong();
     }
 
     public ClassicalMusic getClassicalMusic() {
@@ -34,5 +34,9 @@ public class MusicPlayer {
 
     public ElectronicMusic getElectronicMusic() {
         return electronicMusic;
+    }
+
+    @Override public String toString() {
+        return "MusicPlayer{" + "classicalMusic=" + classicalMusic + ", electronicMusic=" + electronicMusic + '}';
     }
 }
