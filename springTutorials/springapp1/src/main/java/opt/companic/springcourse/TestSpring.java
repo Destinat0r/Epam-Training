@@ -8,12 +8,15 @@ public class TestSpring {
 
 //        Music music = context.getBean("electronicMusic", Music.class);
 //
-//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 //
 //        musicPlayer.playMusic();
 
-        Computer computer = context.getBean("computer", Computer.class);
-        System.out.println(computer.toString());
+//        Computer computer = context.getBean("computer", Computer.class);
+//        System.out.println(computer.toString());
+
+        System.out.println(musicPlayer.playMusic(Genre.CLASSICAL));
+        System.out.println(musicPlayer.playMusic(Genre.ELECTRONIC));
 
         context.close();
     }

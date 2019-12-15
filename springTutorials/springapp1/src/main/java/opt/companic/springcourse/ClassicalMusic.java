@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ClassicalMusic implements Music {
 
+    private String[] music = {"Bethoven - 6th Symphony", "Vivaldi - Seassons", "Mozart - Requiem"};
+
     private ClassicalMusic() {}
 
     public static ClassicalMusic getClassicalMusic() {
@@ -21,5 +23,9 @@ public class ClassicalMusic implements Music {
 
     @Override public String getSong() {
         return "Hungarian Rhapsody";
+    }
+
+    public String[] getMusic() {
+        return music;
     }
 }
