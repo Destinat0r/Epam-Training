@@ -1,21 +1,10 @@
 package opt.companic.springcourse;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-//        Music music = context.getBean("electronicMusic", Music.class);
-//
-//
-        //        musicPlayer.playMusic();
-
-        //        Computer computer = context.getBean("computer", Computer.class);
-        //        System.out.println(computer.toString());
-
-        //        System.out.println(musicPlayer.playMusic(Genre.CLASSICAL));
-        //        System.out.println(musicPlayer.playMusic(Genre.ELECTRONIC));
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 
