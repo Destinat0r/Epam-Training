@@ -808,3 +808,41 @@ SOLID
 
 ОТФОРМАТИРОВАТЬ ИМПОРТЫ
 ВАЛИДАЦАЯ В КОНТРОЛЛЕРЕ - ОТДЕЛЬНЫЙ МЕТОДЕ
+
+1 task - 1 pull request = 1 ... squash -> i rebase
+
+разбить проект на таски и пулл реквест на каждую
+
+max 10-15 файлов
+
+контроллер не разбивать на много классов (не более 15-20 методов
+
+web separate package
+
+one object - one dto
+
+ctrl + alt + c - separate constant
+
+реализовать все круд операциии
+до 7 сущостей можно *
+
+вынести билдеры из энтити
+
+сделать дао солид
+
+не хранить в сессии роль - ложить обрезанного юзера
+
+сет в атрибут - в переменную
+
+ДТО через фасад - прослойка
+
+get never does post's work
+get never modifies
+
+context.getServletContext();
+обрезаный пользователь в контексте
+session.invalidate();
+
+session.listener
+
+login -> event -> listener (add user to context)
